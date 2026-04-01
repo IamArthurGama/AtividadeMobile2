@@ -1,0 +1,19 @@
+import { createStackNavigator } from "@react-navigation/stack"
+import { Home } from "../../screens/Home"
+
+export type PrivateStackParamsList = {
+  Home: undefined;
+}
+
+export function PrivateRoutes() {
+  const PrivateStack = createStackNavigator<PrivateStackParamsList>()
+
+  return (
+    <PrivateStack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
+      <PrivateStack.Screen name='Home' component={Home} />
+    </PrivateStack.Navigator>
+  )
+}
